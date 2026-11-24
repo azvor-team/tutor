@@ -76,6 +76,12 @@ O roteiro não é código: é uma lista de cenas com a fala e o que acontece em 
 O validador confere cada passo antes de gastar voz e gravação: a âncora existe na fala, o
 botão existe na tela e nenhum clique cai num botão de disparo.
 
+## Veja funcionando
+
+O vídeo **"Como usar o Tutor™"** (3 min) foi produzido pelo próprio Tutor™, navegando neste
+repositório: [assistir / baixar na release v1.0.0](https://github.com/azvor-team/tutor/releases/tag/v1.0.0).
+A config e o roteiro usados estão em [`exemplos/como-usar-o-tutor/`](exemplos/como-usar-o-tutor/).
+
 ## Fluxo
 
 | # | Fase | Você aprova? |
@@ -142,6 +148,7 @@ tutor/
 │   ├── motor/                navegador, cursor, anonimizador, padrões, executor
 │   └── render/               render, folhas de contato, QA final
 ├── assets/                   intro, config e roteiro de exemplo, schema, adaptadores, marca
+├── exemplos/                 projetos reais (config + roteiro) prontos para estudar
 └── evals/                    casos de teste da skill
 ```
 

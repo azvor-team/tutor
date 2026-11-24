@@ -1,0 +1,23 @@
+# Exemplo real: o vídeo "Como usar o Tutor™" foi produzido com esta config.
+projeto: como-usar-o-tutor
+sistema:
+  url: https://github.com
+  rotas:
+    - /azvor-team/tutor
+    - /azvor-team/tutor/blob/main/references/04-padroes.md
+sessao: {tipo: nenhum}
+video:
+  cor_destaque: "#1D4E9E"
+  intro:
+    titulo: Como usar o Tutor™
+    subtitulo: Skill da Azvor para vídeos tutoriais narrados
+    logo: marca/azvor-simbolo.svg
+  assinatura:
+    logo: marca/azvor-assinatura.png
+    altura: 44
+  legendas: arquivo
+narracao:
+  voz: Dps47AVoFamqqkDShRDS
+  modelo: eleven_v4
+  grafia_fonetica:
+    Tutor™: Tutor

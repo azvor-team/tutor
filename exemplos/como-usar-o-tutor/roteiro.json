@@ -1,0 +1,590 @@
+{
+  "_licenca": "Tutor™ by Azvor · AZVOR-NR-1.0 · azvor.com.br",
+  "titulo": "Como usar o Tutor™",
+  "subtitulo": "Skill da Azvor para vídeos tutoriais narrados",
+  "cenas": [
+    {
+      "id": "c02_abertura",
+      "tela": "/azvor-team/tutor",
+      "pronto_quando": {
+        "papel": "heading",
+        "texto": "About"
+      },
+      "fala": "Este é o Tutor, uma skill da Azvor para o Claude que transforma qualquer sistema em vídeo tutorial narrado. Tudo o que ela precisa está neste repositório: as instruções, os guias de cada etapa e os scripts. E sim: este vídeo foi feito com ela.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "apontar",
+          "alvo": {
+            "papel": "heading",
+            "texto": "About"
+          },
+          "segundos": 1.2
+        },
+        {
+          "quando": "transforma qualquer sistema",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Tutor™ by Azvor: transforma"
+          },
+          "segundos": 4,
+          "margem": 10
+        },
+        {
+          "quando": "as instruções",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "SKILL.md",
+            "exato": true
+          }
+        },
+        {
+          "quando": "os guias",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "references",
+            "exato": true
+          }
+        },
+        {
+          "quando": "e os scripts",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "scripts",
+            "exato": true
+          }
+        },
+        {
+          "quando": "E sim",
+          "fazer": "mover_para",
+          "x": 760,
+          "y": 300,
+          "segundos": 1.0
+        }
+      ]
+    },
+    {
+      "id": "c03_apresentacao",
+      "fala": "Rolando a página, aparece a apresentação. Você diz qual módulo quer ensinar, e o Tutor mapeia as telas, escreve o roteiro, gera a voz e grava o sistema com o cursor clicando, pesquisando e filtrando no ritmo da fala, sem disparar nada de verdade.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "seletor": "article.markdown-body img",
+            "indice": 0
+          },
+          "deslocamento": 30,
+          "segundos": 1.6
+        },
+        {
+          "quando": "Você diz",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body img",
+            "indice": 0
+          },
+          "segundos": 4.5,
+          "margem": 4
+        },
+        {
+          "quando": "gera a voz",
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "O que você recebe"
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "com o cursor",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "Cursor que ensina"
+          }
+        },
+        {
+          "quando": "pesquisando e filtrando",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "Padrões de uso real"
+          }
+        },
+        {
+          "quando": "sem disparar",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Seguro para produção"
+          },
+          "segundos": 2.5,
+          "margem": 8,
+          "apontar": true
+        }
+      ]
+    },
+    {
+      "id": "c04_como_funciona",
+      "fala": "O funcionamento tem três partes. Um robô visita as telas e anota botões, abas, filtros e campos. O Claude escreve o roteiro, com a fala de cada cena e o que acontece em cada trecho dela. E o motor gera a voz, grava, edita e revisa tudo num servidor, sem instalar nada no seu computador.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Como funciona"
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "três partes",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body pre",
+            "indice": 0
+          },
+          "segundos": 3.5,
+          "margem": 6
+        },
+        {
+          "quando": "Um robô",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "1. MAPA"
+          }
+        },
+        {
+          "quando": "O Claude escreve",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "2. ROTEIRO"
+          }
+        },
+        {
+          "quando": "com a fala de cada cena",
+          "fazer": "rolar_ate",
+          "alvo": {
+            "seletor": "article.markdown-body pre",
+            "indice": 1
+          },
+          "deslocamento": 90,
+          "segundos": 1.2
+        },
+        {
+          "quando": "o que acontece em cada trecho",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body pre",
+            "indice": 1
+          },
+          "segundos": 3.5
+        },
+        {
+          "quando": "E o motor",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "O validador confere cada passo"
+          },
+          "segundos": 0.9
+        }
+      ]
+    },
+    {
+      "id": "c05_fluxo",
+      "fala": "O trabalho segue dez fases. Nas mais importantes, você aprova antes de seguir: o escopo, o roteiro, a sessão de login e uma prévia com duas cenas, antes de gravar o vídeo inteiro.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Fluxo"
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "dez fases",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body table",
+            "indice": 1
+          },
+          "segundos": 3.5
+        },
+        {
+          "quando": "o escopo",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "Briefing: módulo"
+          }
+        },
+        {
+          "quando": "o roteiro",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "Roteiro",
+            "exato": true
+          }
+        },
+        {
+          "quando": "a sessão de login",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "Sessão de login temporária"
+          }
+        },
+        {
+          "quando": "uma prévia",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Prévia com 2 cenas"
+          },
+          "segundos": 2.5,
+          "margem": 8,
+          "apontar": true
+        }
+      ]
+    },
+    {
+      "id": "c06_instalacao",
+      "fala": "Para instalar no Claude Code, basta clonar o repositório na pasta de skills. Depois, é só pedir em linguagem natural: diga o módulo, o endereço do sistema, o servidor e onde está a chave da ElevenLabs.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Instalação"
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "basta clonar",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body pre",
+            "indice": 2
+          },
+          "segundos": 3,
+          "apontar": true
+        },
+        {
+          "quando": "Depois",
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Uso",
+            "exato": true
+          },
+          "deslocamento": 50,
+          "segundos": 1.2
+        },
+        {
+          "quando": "em linguagem natural",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body blockquote"
+          },
+          "segundos": 5,
+          "margem": 8,
+          "apontar": true
+        }
+      ]
+    },
+    {
+      "id": "c07_busca",
+      "tela": "/azvor-team/tutor/blob/main/references/04-padroes.md",
+      "pronto_quando": {
+        "texto": "Biblioteca de padrões de interação"
+      },
+      "fala": "Os guias de cada etapa ficam na pasta references. Para achar qualquer arquivo, use a busca: digitando roteiro, aparecem o roteiro de exemplo e o esquema que o validador usa.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "04-padroes.md",
+            "exato": true,
+            "indice": 0
+          },
+          "segundos": 1.0
+        },
+        {
+          "quando": "ficam na pasta",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "03-roteiro.md",
+            "exato": true
+          },
+          "segundos": 1.5,
+          "margem": 4,
+          "apontar": true
+        },
+        {
+          "quando": "use a busca",
+          "fazer": "pesquisar",
+          "campo": {
+            "placeholder": "Go to file"
+          },
+          "termo": "roteiro",
+          "atraso": 110
+        },
+        {
+          "quando": "o roteiro de exemplo",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "roteiro.exemplo.json"
+          }
+        },
+        {
+          "quando": "o esquema",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "roteiro.schema.json"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c08_padroes",
+      "preparo": [
+        {
+          "fazer": "tecla",
+          "tecla": "Escape"
+        }
+      ],
+      "fala": "Aqui está o coração do Tutor: a biblioteca de padrões. São os movimentos que o cursor sabe fazer: apontar, destacar, clicar, pesquisar, filtrar, trocar abas e parar antes do disparo. E os alvos são descritos pelo que aparece na tela, nunca por coordenada.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Padrões",
+            "exato": true
+          },
+          "deslocamento": 50,
+          "segundos": 1.4
+        },
+        {
+          "quando": "a biblioteca de padrões",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body table",
+            "indice": 1
+          },
+          "segundos": 3
+        },
+        {
+          "quando": "apontar, destacar",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "apontar",
+            "exato": true
+          }
+        },
+        {
+          "quando": "pesquisar, filtrar",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "pesquisar",
+            "exato": true
+          }
+        },
+        {
+          "quando": "filtrar, trocar",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "filtrar",
+            "exato": true
+          }
+        },
+        {
+          "quando": "parar antes do disparo",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "ate_o_disparo",
+            "exato": true
+          },
+          "segundos": 2.5,
+          "margem": 8,
+          "apontar": true
+        },
+        {
+          "quando": "E os alvos",
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Alvos",
+            "exato": true
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "pelo que aparece na tela",
+          "fazer": "destacar",
+          "alvo": {
+            "seletor": "article.markdown-body table",
+            "indice": 0
+          },
+          "segundos": 4
+        }
+      ]
+    },
+    {
+      "id": "c09_seguranca",
+      "tela": "/azvor-team/tutor",
+      "pronto_quando": {
+        "papel": "heading",
+        "texto": "About"
+      },
+      "preparo": [
+        {
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Estrutura"
+          },
+          "deslocamento": 50,
+          "segundos": 0.1
+        }
+      ],
+      "fala": "E o mais importante: o Tutor é seguro para sistemas em produção. O navegador da gravação bloqueia qualquer envio de dados, os botões de disparo são recusados, e nomes e telefones de clientes são trocados por fictícios antes de aparecer na tela.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Segurança"
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "bloqueia qualquer envio",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Bloqueio de escrita:"
+          },
+          "segundos": 2.5,
+          "margem": 8,
+          "apontar": true
+        },
+        {
+          "quando": "os botões de disparo",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Botões de disparo:"
+          },
+          "segundos": 2.5,
+          "margem": 8,
+          "apontar": true
+        },
+        {
+          "quando": "e nomes e telefones",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Privacidade:"
+          },
+          "segundos": 3,
+          "margem": 8,
+          "apontar": true
+        }
+      ]
+    },
+    {
+      "id": "c10_licenca",
+      "fala": "O uso é livre, inclusive para vender os vídeos que você produzir. Só não é permitido vender a skill. Para revenda, white label ou parcerias, fale com o Elias, da Azvor.",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Licença"
+          },
+          "deslocamento": 50,
+          "segundos": 1.3
+        },
+        {
+          "quando": "inclusive para vender",
+          "fazer": "apontar",
+          "alvo": {
+            "texto": "Use à vontade"
+          }
+        },
+        {
+          "quando": "Só não é permitido",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Não é permitido vender a skill"
+          },
+          "segundos": 2.5,
+          "margem": 8,
+          "apontar": true
+        },
+        {
+          "quando": "Para revenda",
+          "fazer": "rolar_ate",
+          "alvo": {
+            "papel": "heading",
+            "texto": "Parcerias"
+          },
+          "deslocamento": 50,
+          "segundos": 1.2
+        },
+        {
+          "quando": "fale com o Elias",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Elias Macedo · Azvor"
+          },
+          "segundos": 3.5,
+          "margem": 10,
+          "apontar": true
+        }
+      ]
+    },
+    {
+      "id": "c11_encerramento",
+      "fala": "Pronto. Agora é com você: escolha um módulo do seu sistema, peça o tutorial ao Claude e deixe o Tutor fazer o resto. Até a próxima!",
+      "passos": [
+        {
+          "quando": 0.2,
+          "fazer": "rolar_ate",
+          "y": 0,
+          "segundos": 2.2
+        },
+        {
+          "quando": "escolha um módulo",
+          "fazer": "apontar",
+          "alvo": {
+            "papel": "heading",
+            "texto": "About"
+          }
+        },
+        {
+          "quando": "deixe o Tutor",
+          "fazer": "destacar",
+          "alvo": {
+            "texto": "Tutor™ by Azvor: transforma"
+          },
+          "segundos": 3,
+          "margem": 10
+        },
+        {
+          "quando": "Até a próxima",
+          "fazer": "mover_para",
+          "x": 900,
+          "y": 420,
+          "segundos": 1.2
+        }
+      ]
+    }
+  ]
+}

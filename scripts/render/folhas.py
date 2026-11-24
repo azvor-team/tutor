@@ -40,7 +40,7 @@ def main():
             out = os.path.join(tmp, "%s_%02d.png" % (cid, int(f * 100)))
             rot = "%s %d%%" % (cid, f * 100)
             subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", "%.2f" % (st + lead + d * f), "-i", arq, "-frames:v", "1",
-                            "-vf", "scale=640:-1,drawtext=text='%s':x=10:y=10:fontsize=22:fontcolor=white:box=1:boxcolor=0x0A1030@0.85:boxborderw=6" % rot,
+                            "-vf", "scale=640:-1,drawtext=text='%s':expansion=none:x=10:y=10:fontsize=22:fontcolor=white:box=1:boxcolor=0x0A1030@0.85:boxborderw=6" % rot,
                             out])
             quadros.append(out)
     for k in range(0, len(quadros), 12):

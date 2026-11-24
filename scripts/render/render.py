@@ -26,7 +26,38 @@ def srt_tempo(s):
     return "%02d:%02d:%06.3f" % (h, m, s)
 
 
-def gerar_legendas(segs, offsets, lead, caminho):
+def _norm(p):
+    import unicodedata
+    p = unicodedata.normalize("NFKD", p.lower())
+    return "".join(ch for ch in p if ch.isalnum() and not unicodedata.combining(ch))
+
+
+def alinhar(fala, stt_palavras):
+    """Usa o TEXTO do roteiro (grafia correta) com os TEMPOS da transcrição."""
+    import difflib
+    orig = fala.split()
+    a, b = [_norm(x) for x in orig], [_norm(w["t"]) for w in stt_palavras]
+    tempos = [None] * len(orig)
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if op == "equal":
+            for k in range(i2 - i1):
+                w = stt_palavras[j1 + k]
+                tempos[i1 + k] = (w["ini"], w["fim"])
+        elif op == "replace" and j2 > j1:
+            ini, fim = stt_palavras[j1]["ini"], stt_palavras[j2 - 1]["fim"]
+            passo = (fim - ini) / (i2 - i1)
+            for k in range(i2 - i1):
+                tempos[i1 + k] = (ini + passo * k, ini + passo * (k + 1))
+    # preenche lacunas por interpolação com os vizinhos
+    for i, t in enumerate(tempos):
+        if t is None:
+            ant = next((tempos[j][1] for j in range(i - 1, -1, -1) if tempos[j]), 0.0)
+            prx = next((tempos[j][0] for j in range(i + 1, len(tempos)) if tempos[j]), ant + 0.3)
+            tempos[i] = (ant, max(ant + 0.05, prx))
+    return [{"t": w, "ini": t[0], "fim": t[1]} for w, t in zip(orig, tempos)]
+
+
+def gerar_legendas(segs, offsets, lead, caminho, falas=None):
     linhas, n = [], 1
     for (nome, _, _, audio), off in zip(segs, offsets):
         if not audio:
@@ -35,7 +66,7 @@ def gerar_legendas(segs, offsets, lead, caminho):
         if not stt:
             continue
         bloco, ini = [], None
-        palavras = stt["palavras"]
+        palavras = alinhar(falas[nome], stt["palavras"]) if falas and falas.get(nome) else stt["palavras"]
         for i, w in enumerate(palavras):
             ini = w["ini"] if ini is None else ini
             bloco.append(w["t"])
@@ -58,6 +89,7 @@ def gerar_legendas(segs, offsets, lead, caminho):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--saida", default="")
+    ap.add_argument("--so-legendas", action="store_true", help="refaz só o .srt a partir da linha do tempo existente")
     a = ap.parse_args()
     banner("render")
     cfg = carregar_config()
@@ -81,6 +113,13 @@ def main():
         segs.append((c["id"], start(c["id"]), lead + d + tail, audio))
     if not segs:
         sys.exit("Nada para montar: grave as cenas primeiro.")
+
+    if a.so_legendas:
+        lt = ler_json("out/linha_do_tempo.json")
+        offs = {x["nome"]: x["inicio"] for x in lt["segmentos"]}
+        srt = gerar_legendas(segs, [offs.get(s[0], 0.0) for s in segs], lead, os.path.splitext(saida)[0] + ".srt",
+                             {c["id"]: c.get("fala") for c in rot["cenas"]})
+        return print("✓", srt)
 
     ins, filt = [], []
     for i, (nome, ini, d, _) in enumerate(segs):
@@ -139,7 +178,7 @@ def main():
 
     srt = None
     if v.get("legendas", "arquivo") != "nenhum":
-        srt = gerar_legendas(segs, offsets, lead, os.path.splitext(saida)[0] + ".srt")
+        srt = gerar_legendas(segs, offsets, lead, os.path.splitext(saida)[0] + ".srt", {c["id"]: c.get("fala") for c in rot["cenas"]})
     extra_sub = []
     if srt and v.get("legendas") == "faixa":
         ins += ["-i", srt]
