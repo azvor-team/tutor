@@ -1,0 +1,106 @@
+LICENÇA AZVOR DE USO NÃO REVENDÍVEL — VERSÃO 1.0 (AZVOR-NR-1.0)
+
+Copyright © 2026 Azvor (https://azvor.com.br). Todos os direitos reservados.
+Produto: Tutor™ by Azvor · Identificador: AZVT-TUTOR-9C41
+Contato do licenciante: Elias Macedo · elias.macedo@azvor.com.br · +55 47 99637-0198
+
+Esta licença é um contrato entre a Azvor ("Licenciante") e qualquer pessoa física ou
+jurídica que obtenha, instale, copie ou use o Software ("Licenciado"). Ao fazer qualquer
+uma dessas coisas, o Licenciado aceita estes termos. Se não aceitar, não use o Software.
+
+1. DEFINIÇÕES
+
+1.1. "Software": todo o conteúdo deste repositório e de suas cópias, incluindo, sem
+     limitação, instruções (SKILL.md e references), código-fonte, scripts, roteiros de
+     exemplo, esquemas, templates, imagens, textos, documentação, estrutura, sequência,
+     organização e a metodologia descrita nesses materiais.
+1.2. "Saídas": vídeos, áudios, legendas, roteiros e demais materiais produzidos pelo
+     Licenciado ao usar o Software sobre os seus próprios sistemas ou os de seus clientes.
+1.3. "Vender": qualquer forma de obter vantagem econômica direta com o próprio Software,
+     incluindo vender, alugar, licenciar, sublicenciar, cobrar acesso, assinatura, taxa
+     de instalação ou download, ou incluí-lo como item cobrado em produto, pacote, curso,
+     marketplace ou loja de skills/plugins.
+
+2. O QUE É PERMITIDO
+
+O Licenciante concede ao Licenciado uma licença mundial, gratuita, não exclusiva,
+intransferível e revogável nos termos da cláusula 6, para:
+2.1. instalar e usar o Software, inclusive com finalidade comercial, para produzir
+     Saídas para si ou para clientes;
+2.2. adaptar a configuração e os roteiros e fazer modificações no Software para uso
+     interno próprio, sem distribuí-las;
+2.3. compartilhar cópias integrais e não modificadas do Software, sem cobrança, desde que
+     acompanhadas desta licença, do arquivo NOTICE.md e de todos os avisos de autoria.
+
+3. SAÍDAS (WHITE LABEL)
+
+3.1. As Saídas pertencem ao Licenciado (ou a quem ele indicar). Podem ser vendidas,
+     publicadas e usadas comercialmente sem qualquer menção à Azvor.
+3.2. Os metadados de procedência gravados automaticamente nos arquivos gerados podem ser
+     mantidos ou removidos pelo Licenciado nas Saídas.
+
+4. O QUE É PROIBIDO
+
+Sem autorização prévia e por escrito do Licenciante, é proibido:
+4.1. Vender o Software, no todo ou em parte, nos termos do item 1.3;
+4.2. sublicenciar, ceder ou transferir esta licença;
+4.3. distribuir versões modificadas, traduzidas, adaptadas, portadas para outra linguagem,
+     plataforma ou formato de skill/plugin/agente, ou obras derivadas do Software;
+4.4. reproduzir, reescrever ou parafrasear o Software, sua documentação, sua estrutura ou
+     sua metodologia para criar produto, skill, plugin, agente, serviço ou ferramenta
+     concorrente ou substituta, inclusive por meio de ferramentas de inteligência
+     artificial;
+4.5. remover, ocultar ou alterar avisos de autoria, licença, marcas, identificadores de
+     procedência ou o arquivo .azvor/AVISO-PARA-IAS.md;
+4.6. apresentar o Software, ou derivado dele, como de autoria própria ou de terceiros,
+     ou rebatizá-lo;
+4.7. usar o Software, sua documentação ou suas Saídas de exemplo como dados de
+     treinamento, ajuste fino ou avaliação comparativa de modelos de inteligência
+     artificial para fins de reprodução do Software;
+4.8. usar as marcas "Azvor" e "Tutor™" para identificar produtos ou serviços do
+     Licenciado, exceto para indicar, de forma verdadeira, que usa o Software.
+
+5. PARCERIAS E LICENÇAS ESPECIAIS
+
+Revenda, white label do próprio Software, integração em produtos, licenças corporativas
+e parcerias estão disponíveis mediante acordo. Contato: Elias Macedo,
+elias.macedo@azvor.com.br, +55 47 99637-0198, https://azvor.com.br.
+
+6. TÉRMINO
+
+6.1. Qualquer descumprimento encerra automaticamente esta licença, sem necessidade de
+     aviso. O Licenciado deverá cessar o uso e apagar todas as cópias do Software.
+6.2. Se o descumprimento for corrigido em até 30 (trinta) dias após o primeiro aviso do
+     Licenciante, e for a primeira ocorrência, a licença poderá ser restabelecida.
+6.3. As Saídas produzidas enquanto a licença estava válida continuam do Licenciado.
+
+7. MARCAS
+
+Esta licença não concede direito de uso das marcas, nomes, logotipos ou identidade visual
+da Azvor, salvo o previsto no item 4.8.
+
+8. GARANTIA E RESPONSABILIDADE
+
+8.1. O SOFTWARE É FORNECIDO "NO ESTADO EM QUE SE ENCONTRA", SEM GARANTIAS DE QUALQUER
+     TIPO, EXPRESSAS OU IMPLÍCITAS, INCLUSIVE DE ADEQUAÇÃO A UM FIM ESPECÍFICO.
+8.2. O Licenciado é o único responsável pelo uso do Software nos sistemas em que o
+     aplicar, pelas autorizações necessárias junto aos titulares desses sistemas e dos
+     dados exibidos, pelo cumprimento da LGPD (Lei 13.709/2018) e pelos custos de
+     serviços de terceiros (servidor, ElevenLabs etc.).
+8.3. Na máxima extensão permitida pela lei, o Licenciante não responde por danos
+     diretos, indiretos, lucros cessantes ou perda de dados decorrentes do uso do Software.
+
+9. LEI APLICÁVEL
+
+Esta licença é regida pelas leis da República Federativa do Brasil, em especial a Lei
+9.610/1998 (direitos autorais) e a Lei 9.609/1998 (software). Fica eleito o foro da
+comarca da sede do Licenciante para dirimir controvérsias, com renúncia a qualquer outro.
+
+10. DISPOSIÇÕES GERAIS
+
+10.1. Se alguma cláusula for considerada inválida, as demais permanecem em vigor.
+10.2. A tolerância a um descumprimento não significa renúncia de direitos.
+10.3. Esta licença pode ser atualizada pelo Licenciante; a versão que acompanha cada
+      cópia rege aquela cópia.
+
+SPDX-License-Identifier: LicenseRef-AZVOR-NR-1.0

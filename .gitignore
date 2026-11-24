@@ -1,0 +1,18 @@
+# Tutor™ by Azvor
+__pycache__/
+*.pyc
+.DS_Store
+# nunca versionar segredos ou sessões
+*.key
+sessao.json
+segredos/
+.env
+.env.*
+# artefatos gerados nos projetos
+*.mkv
+clips/
+audio/*.mp3
+out/
+qa/_quadros/
+# render de capa em alta (gerado)
+assets/marca/capa@2x.png

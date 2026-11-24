@@ -1,0 +1,55 @@
+{
+  "_licenca": "Tutor™ by Azvor · AZVOR-NR-1.0 · azvor.com.br",
+  "titulo": "Módulo Clientes",
+  "subtitulo": "Cadastro, busca e filtros · passo a passo",
+  "cenas": [
+    {
+      "id": "c02_abertura",
+      "tela": "/clientes",
+      "pronto_quando": {"texto": "Clientes"},
+      "fala": "Oi! Neste vídeo você vai aprender a usar o módulo de Clientes. Aqui ficam todos os cadastros da empresa, com busca, filtros e o histórico de cada cliente.",
+      "passos": [
+        {"quando": 0.2, "fazer": "apontar", "alvo": {"texto": "Clientes", "papel": "heading"}, "segundos": 1.2},
+        {"quando": "todos os cadastros", "fazer": "destacar", "alvo": {"seletor": "table"}, "segundos": 3.5},
+        {"quando": "com busca", "fazer": "apontar", "alvo": {"placeholder": "Buscar cliente"}},
+        {"quando": "filtros", "fazer": "apontar", "alvo": {"papel": "button", "texto": "Filtros"}}
+      ]
+    },
+    {
+      "id": "c03_busca",
+      "fala": "Para encontrar alguém, digite o nome, o telefone ou o documento na busca. A lista atualiza na hora.",
+      "passos": [
+        {"quando": "Para encontrar", "fazer": "pesquisar", "campo": {"placeholder": "Buscar cliente"}, "termo": "Mariana"},
+        {"quando": "A lista atualiza", "fazer": "destacar", "alvo": {"seletor": "tbody tr"}, "segundos": 2.5}
+      ]
+    },
+    {
+      "id": "c04_filtros",
+      "fala": "Nos filtros, você escolhe a situação do cliente. Vamos ver só os ativos. E nas abas, separa por tipo de cadastro.",
+      "passos": [
+        {"quando": "Nos filtros", "fazer": "filtrar", "filtro": {"papel": "button", "texto": "Filtros"}, "opcao": "Ativos"},
+        {"quando": "E nas abas", "fazer": "trocar_aba", "aba": "Empresas"}
+      ]
+    },
+    {
+      "id": "c05_detalhe",
+      "fala": "Clicando num cliente, abre a ficha completa: dados, contatos e o histórico de atendimentos.",
+      "passos": [
+        {"quando": "Clicando", "fazer": "abrir_detalhe", "linha": 0},
+        {"quando": "dados", "fazer": "destacar", "alvo": {"texto": "Dados", "papel": "tab"}, "segundos": 1.5},
+        {"quando": "histórico", "fazer": "trocar_aba", "aba": "Histórico"},
+        {"quando": "atendimentos", "fazer": "fechar_detalhe"}
+      ]
+    },
+    {
+      "id": "c06_novo_ate_o_disparo",
+      "tela": "/clientes/novo",
+      "pronto_quando": {"texto": "Novo cliente"},
+      "fala": "Para cadastrar, preencha o nome e o telefone. Ao clicar em Salvar, o cliente entra na lista. Aqui no vídeo a gente para um passo antes.",
+      "passos": [
+        {"quando": "preencha o nome", "fazer": "preencher_formulario", "campos": {"Nome": "Cliente Teste", "Telefone": "11 90000-0000"}},
+        {"quando": "Ao clicar em Salvar", "fazer": "ate_o_disparo", "botao": "Salvar"}
+      ]
+    }
+  ]
+}

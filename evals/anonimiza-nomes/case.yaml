@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: anonimiza-nomes
+expected_outcome: |
+  A config em ./atendimentos lista /api/v1/atendimentos em privacidade.rotas, inclui customer_name em chaves_nome sem incluir agent_name, mantém mascarar_telefones e bloquear_escrita ativos.

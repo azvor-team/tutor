@@ -1,0 +1,51 @@
+# Tutor™ by Azvor · © 2026 Azvor (azvor.com.br) · Licença AZVOR-NR-1.0
+# Configuração de um projeto. Copie para a pasta do projeto como tutor.config.yaml.
+# Tudo que não estiver aqui usa o padrão de scripts/comum.py.
+
+projeto: crm-modulo-clientes          # nome do arquivo final (out/<projeto>.mp4)
+
+sistema:
+  url: https://app.suaempresa.com.br  # base do sistema
+  rotas:                              # telas do módulo (o crawler visita todas)
+    - /clientes
+    - /clientes/novo
+    - /clientes/configuracoes
+  pronto_padrao: null                 # texto que indica "tela carregada" quando a cena não define
+
+sessao:
+  tipo: storage                       # nenhum | storage (localStorage/cookies vindos de sessao.json)
+  arquivo: sessao.json                # gerado na VPS em <raiz>/segredos/ (ver references/09)
+
+seguranca:
+  bloquear_escrita: true              # aborta POST/PUT/PATCH/DELETE no navegador da gravação
+  permitir: [/auth/refresh]           # exceções necessárias para a sessão continuar viva
+  botoes_proibidos: [Enviar, Publicar, Salvar, Confirmar, Ativar, Excluir, Apagar, Disparar, Pagar, Finalizar]
+
+privacidade:
+  rotas: ["/api/v1/clientes", "/api/v1/conversas"]   # regex das respostas a anonimizar
+  chaves_nome: [nome, cliente, customer_name]         # campos JSON com nome de cliente
+  mascarar_telefones: true
+  cache_rotas: ["/api/v1/clientes\\?"]               # evita tela de carregamento ao trocar de aba
+
+video:
+  escala: 1.25                        # zoom da interface (1.25 = 125%, legível em 1080p)
+  cor_destaque: "#1D4E9E"             # anel de destaque, clique e intro
+  intro:
+    ativa: true
+    titulo: Módulo Clientes           # última palavra fica na cor de destaque
+    subtitulo: Cadastro, busca e filtros · passo a passo
+    logo: marca/logo-cliente.png      # white label: a logo de quem vai receber o vídeo
+  assinatura:
+    logo: marca/assinatura.png        # canto do vídeo (PNG sem fundo). Vazio = sem assinatura
+    altura: 54
+    opacidade: 0.92
+    posicao: inferior_direito         # inferior_direito | inferior_esquerdo | superior_direito | superior_esquerdo
+  cartela: {ativa: true, duracao: 3.4}
+  legendas: arquivo                   # nenhum | arquivo (.srt ao lado) | faixa (legenda embutida no mp4)
+
+narracao:
+  voz: ""                             # voice_id da ElevenLabs (pipeline.sh <proj> narrar --vozes)
+  modelo: eleven_v4
+  formato: mp3_44100_128              # plano Starter não aceita 192
+  grafia_fonetica:                    # só no texto enviado à voz
+    CRM: cê erre eme

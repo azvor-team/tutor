@@ -1,0 +1,115 @@
+<!doctype html>
+<!-- Tutor™ by Azvor · © 2026 Azvor (azvor.com.br) · Licença AZVOR-NR-1.0 · ID AZVT-TUTOR-9C41 -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Tutor by Azvor · capa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #070B24; --navy2: #0E1640; --azul: #1D4E9E; --vivo: #2F7BD8; --gelo: #EEF3FB; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--navy); }
+  .capa { width: 1280px; height: 640px; position: relative; overflow: hidden; font-family: Poppins, sans-serif; color: var(--gelo);
+          background: radial-gradient(900px 520px at 78% 40%, #16307A 0%, rgba(22,48,122,0) 70%), linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); }
+  .grade { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+           background-size: 40px 40px; mask-image: radial-gradient(circle at 70% 45%, #000 0%, transparent 75%); }
+  .simbolo { position: absolute; right: -60px; bottom: -120px; width: 620px; opacity: .06; }
+  .txt { position: absolute; left: 72px; top: 92px; width: 520px; }
+  .selo { display: inline-flex; align-items: center; gap: 10px; font-family: "Bai Jamjuree"; font-weight: 600; font-size: 14px; letter-spacing: .22em;
+          text-transform: uppercase; color: #9FB8E8; }
+  .selo i { width: 26px; height: 2px; background: var(--vivo); display: inline-block; }
+  h1 { font-family: "Bai Jamjuree"; font-weight: 700; font-size: 112px; line-height: .95; margin: 22px 0 0; letter-spacing: -.02em; color: #fff; }
+  h1 sup { font-size: 26px; vertical-align: top; position: relative; top: 18px; margin-left: 4px; color: #9FB8E8; font-weight: 500; }
+  .sub { font-size: 25px; line-height: 1.38; font-weight: 300; margin-top: 22px; color: #D6E2F7; }
+  .sub b { font-weight: 500; color: #fff; }
+  .chips { display: flex; gap: 8px; margin-top: 30px; flex-wrap: wrap; }
+  .chips span { font-size: 13px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(159,184,232,.35); color: #C9D8F3; background: rgba(255,255,255,.04); }
+  .assin { position: absolute; left: 72px; bottom: 54px; display: flex; align-items: center; gap: 12px; font-family: "Bai Jamjuree"; letter-spacing: .32em; font-size: 15px; color: #fff; font-weight: 600; }
+  .assin img { height: 30px; }
+  .assin small { letter-spacing: .12em; color: #8EA6D6; font-weight: 500; margin-left: 6px; font-family: Poppins; font-size: 13px; }
+  /* janela de app */
+  .app { position: absolute; left: 650px; top: 86px; width: 580px; height: 400px; border-radius: 16px; background: #F7F9FD; box-shadow: 0 40px 90px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.08);
+         overflow: hidden; transform: perspective(1400px) rotateY(-9deg) rotateX(3deg); transform-origin: left center; }
+  .barra { height: 30px; background: #E7ECF6; display: flex; align-items: center; gap: 7px; padding: 0 12px; }
+  .barra b { width: 10px; height: 10px; border-radius: 50%; background: #C7D0E2; }
+  .lado { position: absolute; left: 0; top: 30px; bottom: 0; width: 118px; background: #fff; border-right: 1px solid #E5EAF3; padding: 16px 12px; }
+  .lado p { height: 9px; border-radius: 5px; background: #E3E9F4; margin: 0 0 13px; }
+  .lado p.on { background: var(--azul); opacity: .85; width: 80%; }
+  .corpo { position: absolute; left: 134px; top: 46px; right: 16px; }
+  .kpis { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 10px; }
+  .k { background: #fff; border: 1px solid #E5EAF3; border-radius: 10px; height: 74px; padding: 10px; position: relative; }
+  .k em { display: block; width: 50%; height: 7px; border-radius: 4px; background: #DCE3F0; }
+  .k strong { display: block; font-family: "Bai Jamjuree"; font-size: 30px; color: #0E1640; margin-top: 8px; }
+  .k.g strong { color: #1A8F4E; }
+  .tabs { display: flex; gap: 16px; margin: 16px 0 8px; }
+  .tabs span { height: 8px; width: 54px; border-radius: 4px; background: #DCE3F0; }
+  .tabs span.on { background: var(--azul); }
+  .busca { height: 26px; border: 1.5px solid var(--vivo); border-radius: 8px; background: #fff; display: flex; align-items: center; padding: 0 10px; font-size: 12px; color: #33415C; width: 52%; }
+  .busca i { width: 1.5px; height: 14px; background: #33415C; margin-left: 2px; animation: pisca 1s steps(2) infinite; }
+  .linhas { margin-top: 10px; background: #fff; border: 1px solid #E5EAF3; border-radius: 10px; padding: 6px 10px; }
+  .linhas div { height: 26px; border-bottom: 1px solid #EEF2F8; display: flex; align-items: center; gap: 12px; }
+  .linhas div:last-child { border: 0; }
+  .linhas div p { margin: 0; height: 7px; border-radius: 4px; background: #E3E9F4; }
+  .spot { position: absolute; left: 128px; top: 40px; width: 186px; height: 86px; border-radius: 13px; box-shadow: 0 0 0 3px rgba(47,123,216,.95), 0 0 0 10px rgba(47,123,216,.2); }
+  .cursor { position: absolute; left: 290px; top: 98px; filter: drop-shadow(0 3px 4px rgba(0,0,0,.35)); }
+  .ripple { position: absolute; left: 270px; top: 80px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(47,123,216,.7); background: rgba(47,123,216,.18); }
+  /* faixa de fala */
+  .fala { position: absolute; left: 690px; top: 512px; width: 520px; height: 64px; border-radius: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(159,184,232,.22);
+          display: flex; align-items: center; gap: 14px; padding: 0 16px; backdrop-filter: blur(6px); }
+  .play { width: 34px; height: 34px; border-radius: 50%; background: var(--vivo); display: grid; place-items: center; flex: none; }
+  .onda { display: flex; align-items: center; gap: 3px; height: 34px; flex: 1; }
+  .onda b { width: 3px; border-radius: 2px; background: #9FB8E8; }
+  .onda b.on { background: #fff; }
+  .leg { font-size: 12.5px; color: #C9D8F3; white-space: nowrap; }
+  @keyframes pisca { 50% { opacity: 0; } }
+</style>
+</head>
+<body>
+<div class="capa" id="capa">
+  <div class="grade"></div>
+  <img class="simbolo" src="azvor-simbolo-branco.svg" alt="">
+  <div class="txt">
+    <div class="selo"><i></i>Skill para Claude · Azvor</div>
+    <h1>Tutor<sup>™</sup></h1>
+    <div class="sub">Transforma <b>qualquer sistema</b> em vídeo tutorial narrado, com o cursor clicando, pesquisando e filtrando <b>no ritmo da voz</b>.</div>
+    <div class="chips"><span>Mapeia as telas</span><span>Roteiro + voz</span><span>Grava e edita</span><span>Nada é disparado</span></div>
+  </div>
+  <div class="assin"><img src="azvor-simbolo-branco.svg" alt="">AZVOR<small>azvor.com.br</small></div>
+
+  <div class="app">
+    <div class="barra"><b></b><b></b><b></b></div>
+    <div class="lado"><p style="width:70%"></p><p></p><p class="on"></p><p></p><p style="width:60%"></p><p></p><p style="width:75%"></p></div>
+    <div class="corpo">
+      <div class="kpis">
+        <div class="k g"><em></em><strong>+72</strong></div>
+        <div class="k"><em></em><strong>1.284</strong></div>
+        <div class="k"><em></em><strong>38%</strong></div>
+      </div>
+      <div class="tabs"><span></span><span class="on"></span><span></span><span></span></div>
+      <div class="busca">atendimento<i></i></div>
+      <div class="linhas">
+        <div><p style="width:22%"></p><p style="width:30%"></p><p style="width:14%;background:#CDEBD8"></p></div>
+        <div><p style="width:18%"></p><p style="width:26%"></p><p style="width:14%;background:#CDEBD8"></p></div>
+        <div><p style="width:25%"></p><p style="width:22%"></p><p style="width:14%;background:#F6D4D4"></p></div>
+        <div><p style="width:20%"></p><p style="width:28%"></p><p style="width:14%;background:#CDEBD8"></p></div>
+      </div>
+    </div>
+    <div class="spot"></div>
+    <div class="ripple"></div>
+    <svg class="cursor" width="30" height="30" viewBox="0 0 24 24"><path d="M4 2 L4 19 L8.5 15 L11.5 22 L14.5 20.7 L11.5 14 L17.5 14 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  </div>
+
+  <div class="fala">
+    <div class="play"><svg width="12" height="14" viewBox="0 0 12 14"><path d="M1 1 L11 7 L1 13 Z" fill="#fff"/></svg></div>
+    <div class="onda" id="onda"></div>
+    <div class="leg">“…agora clique em Filtros.”</div>
+  </div>
+</div>
+<script>
+  const o = document.getElementById("onda");
+  for (let i = 0; i < 46; i++) { const b = document.createElement("b"); const h = 6 + Math.abs(Math.sin(i * 0.55) * 18 + Math.sin(i * 1.7) * 8);
+    b.style.height = h + "px"; if (i < 20) b.className = "on"; o.appendChild(b); }
+</script>
+</body>
+</html>

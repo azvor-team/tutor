@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://azvor.com.br/tutor/roteiro.schema.json",
+  "title": "Roteiro do Tutor™ by Azvor",
+  "description": "Cenas com fala e passos ancorados em trechos da fala. Licença AZVOR-NR-1.0.",
+  "type": "object",
+  "required": ["cenas"],
+  "properties": {
+    "titulo": {"type": "string"},
+    "subtitulo": {"type": "string"},
+    "cenas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^c[0-9]{2}_[a-z0-9_]+$"},
+          "tela": {"type": "string", "description": "Rota ou URL. Sem tela, a cena continua na tela anterior."},
+          "pronto_quando": {"$ref": "#/$defs/alvo"},
+          "espera_extra": {"type": "number", "default": 2.0},
+          "fala": {"type": "string"},
+          "duracao": {"type": "number", "description": "Só para cenas sem fala."},
+          "preparo": {"type": "array", "items": {"$ref": "#/$defs/passo"}, "description": "Executado antes de gravar."},
+          "passos": {"type": "array", "items": {"$ref": "#/$defs/passo"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "alvo": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "object", "properties": {
+          "texto": {"type": "string"}, "papel": {"type": "string"}, "rotulo": {"type": "string"},
+          "placeholder": {"type": "string"}, "seletor": {"type": "string"}, "contexto": {"type": "string"},
+          "indice": {"type": "integer"}, "exato": {"type": "boolean"}}}
+      ]
+    },
+    "passo": {
+      "type": "object",
+      "required": ["fazer"],
+      "properties": {
+        "quando": {"oneOf": [{"type": "string"}, {"type": "number"}]},
+        "fazer": {"enum": ["apontar", "destacar", "clicar", "rolar_ate", "trocar_aba", "pesquisar", "filtrar", "selecionar",
+                           "abrir_detalhe", "fechar_detalhe", "preencher_formulario", "ate_o_disparo", "percorrer",
+                           "navegar_menu", "paginar", "digitar", "tecla", "esperar", "mover_para", "navegar"]},
+        "permitido": {"type": "boolean", "description": "Libera clique em botão da lista de proibidos. Exige justificativa em 'nota'."},
+        "nota": {"type": "string"}
+      }
+    }
+  }
+}

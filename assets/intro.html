@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- Tutor™ by Azvor · © 2026 Azvor (azvor.com.br) · Licença AZVOR-NR-1.0 · ID AZVT-TUTOR-9C41 -->
+<html lang="pt-BR" data-azvor="tutor">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Tutor by Azvor">
+<title>Intro</title>
+<style>
+  :root { --cor: #1D4E9E; }
+  html, body { margin: 0; height: 100%; background: #fff; overflow: hidden; font-family: Inter, "Noto Sans", system-ui, sans-serif; }
+  .bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--cor) 9%, #fff) 0%, #fff 62%); }
+  .anel { position: absolute; left: 50%; top: 44%; width: 30vw; height: 30vw; margin: -15vw 0 0 -15vw; border-radius: 50%;
+          border: 2px solid var(--cor); opacity: 0; transform: scale(.6); animation: anel 2.4s .2s cubic-bezier(.2,.8,.2,1) forwards; }
+  .wrap { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2vw; }
+  img { max-width: 30vw; max-height: 14vh; opacity: 0; transform: translateY(1.2vw) scale(.92); animation: entra 1.1s .35s cubic-bezier(.2,.8,.2,1) forwards; position: relative; }
+  .barra { width: 0; height: .32vw; background: var(--cor); border-radius: 9px; animation: barra .9s 1.25s cubic-bezier(.6,0,.2,1) forwards; position: relative; }
+  h1 { margin: 0; font-size: 4.1vw; font-weight: 700; letter-spacing: -.02em; color: #0f172a; opacity: 0; transform: translateY(1vw);
+       animation: entra .9s 1.55s cubic-bezier(.2,.8,.2,1) forwards; position: relative; text-align: center; }
+  h1 b { color: var(--cor); }
+  p { margin: -.8vw 0 0; font-size: 1.45vw; color: #475569; opacity: 0; animation: entra .9s 2s ease forwards; position: relative; text-align: center; }
+  .sai { position: absolute; inset: 0; background: #fff; opacity: 0; animation: fade .6s 4.6s ease forwards; }
+  @keyframes entra { to { opacity: 1; transform: none; } }
+  @keyframes barra { to { width: 9vw; } }
+  @keyframes anel { 0% { opacity: 0; transform: scale(.6); } 35% { opacity: .18; } 100% { opacity: 0; transform: scale(1.35); } }
+  @keyframes fade { to { opacity: 1; } }
+</style>
+</head>
+<body>
+  <div class="bg"></div><div class="anel"></div>
+  <div class="wrap">
+    <img id="logo" alt="" hidden>
+    <div class="barra"></div>
+    <h1 id="titulo"></h1>
+    <p id="subtitulo"></p>
+  </div>
+  <div class="sai"></div>
+<script>
+  // Parâmetros: ?titulo=Módulo Clientes&subtitulo=...&logo=arquivo.png&cor=%231D4E9E
+  // A última palavra do título ganha a cor de destaque.
+  const q = new URLSearchParams(location.search);
+  const cor = q.get("cor"); if (cor) document.documentElement.style.setProperty("--cor", cor);
+  const t = (q.get("titulo") || "Tutorial").trim().split(" ");
+  const ult = t.pop();
+  document.getElementById("titulo").innerHTML = (t.length ? t.join(" ").replace(/</g, "&lt;") + " " : "") + "<b>" + ult.replace(/</g, "&lt;") + "</b>";
+  document.getElementById("subtitulo").textContent = q.get("subtitulo") || "";
+  const logo = q.get("logo"); if (logo) { const i = document.getElementById("logo"); i.src = logo; i.hidden = false; }
+</script>
+</body>
+</html>
